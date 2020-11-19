@@ -1,0 +1,43 @@
+/* .home__middleSide {
+    align-items: center;
+} */
+
+form {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+form > div {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+form > div > h4 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+form > div > input {
+    width: 50%;
+    border-radius: 4px;
+    border-color: none;
+    height: 25px;
+}
+
+.req__kycbtn {
+    align-self: center;
+}
+
+.kycreqbtn {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color:  #bcdd49;
+}
+
+.req__kycbtn :hover {
+    background-color: #ddca49;
+}

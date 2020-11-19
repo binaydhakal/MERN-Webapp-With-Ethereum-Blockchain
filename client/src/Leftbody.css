@@ -1,0 +1,67 @@
+.leftbody {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.leftbody__profilePicture {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 15px;
+}
+.leftbody__profileName {
+    font-weight: bold !important;
+    padding-bottom: 5px;
+}
+
+.leftbody__userInfo {
+    padding-bottom: 20px;
+}
+
+.leftbody__divider {
+    border-top: 1px solid #1f44e76b;
+    width: 100%;
+    
+}
+.leftbody__downPortion {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.leftbody__full > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 9px;
+    margin-bottom: 15px;
+    padding-left: 10px ;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+   
+
+}
+
+
+.leftbody__full :hover {   
+    background-color: #f8df2d6b;
+
+} 
+
+.leftbody__image {
+    font-size: 29px;
+    margin-right: 10px;
+} 
+span{
+    margin-left: 16px;
+   
+}

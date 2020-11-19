@@ -1,0 +1,45 @@
+.middlebody {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.middlebody__firstPart {
+    display: flex;
+    width: inherit;
+    padding-left: 105px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: rgb(243, 237, 237); 
+}
+
+.firstpart__link {
+    display: flex;
+    margin-right: 70px;
+    align-items: center;
+    
+}
+
+.firstpart__icon {
+    font-size: 35px;
+}
+
+.firstpart__link > span {
+    color: black;
+}
+
+.middlebody__secondPart {
+    margin: 15px 15px 15px 15px;
+}
+
+.middlebody__thirdPart {
+    margin: 20px;
+}
+
+.fourthpart__insideLink {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+    
+}

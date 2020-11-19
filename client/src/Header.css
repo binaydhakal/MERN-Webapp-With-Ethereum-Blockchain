@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+}
+.header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #f8df2d6b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+.header > Link{
+    text-decoration: none;
+}
+
+.header__image {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.header__nav{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    margin-left: 300px;
+}
+
+.header__navOption{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-decoration: none;
+    
+}
+.header__navOptionOne{
+    text-decoration: none;
+}
+.header__navOption:hover {
+    color: tomato;
+}
+
+.header__endNav {
+    padding-left: 120px;
+}
