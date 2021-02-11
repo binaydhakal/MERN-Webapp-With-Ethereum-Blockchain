@@ -13,16 +13,16 @@ function Leftbody() {
     const [ name, setName] = useState('');
     const [ phone, setPhone] = useState('');
 
-    // const findName = async() => {
-    //     console.log("yes");
-    //     const tep = await contract.methods.userDetails(accounts[0]).call({ from: accounts[0] });
-    //     setName(tep[1]);
-    //     setPhone(tep[2]);
-    // }
+    const findName = async() => {
+        console.log("yes");
+        const tep = await contract.methods.userDetails(accounts[0]).call({ from: accounts[0] });
+        setName(tep[1]);
+        setPhone(tep[2]);
+    }
 
     return (
         <div className="leftbody">
-            <div className="leftbody__userInfo"> 
+            <div className="leftbody__userInfo" onLoad={findName}> 
                 <img className="leftbody__profilePicture" src="https://d7vw40z4bofef.cloudfront.net/static/img/profilepic.jpg" />
                 <div className="leftbody__profileName">{name}</div>
                 <div>{phone}</div>
@@ -44,7 +44,7 @@ function Leftbody() {
                     </div>        
                 </Link>
 
-                <Link >
+                <Link to='/mykycreq' >
                     <div className="leftbody__full">
                         <div>
                         <VscAccount className="leftbody__image" style={{color: "lightgreen"}} />

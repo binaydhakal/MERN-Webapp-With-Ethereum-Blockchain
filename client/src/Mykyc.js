@@ -16,10 +16,11 @@ function Mykyc() {
     const [ photo2, setPhoto2 ] = useState();
     const [ photo3, setPhoto3 ] = useState();
 
-    const [ fullname, setFullname ] = useState('');
-    const [ fathername, setFathername ] = useState('');
-    const [ dob, setDob ] = useState('');
-    const [ gender, setGender ] = useState('')
+    const [fullname, setFullname] = useState('');
+    const [fathername, setFathername] = useState('');
+    const [dob, setDob] = useState('');
+    const [gender, setGender] = useState('');
+    const [add, setAdd] = useState();
 
     const imageHandler1 = (e) => {
         const reader = new FileReader();
@@ -63,7 +64,13 @@ function Mykyc() {
     const submitKyc = async(e) => {
         e.preventDefault();
 
-        const les = await contract.methods.buildkyc(fullname,fathername,gender,dob).send({ form: accounts[0] });
+        const les = await contract.methods.buildKyc(fullname,fathername,gender,dob).send({ from: accounts[0] });
+
+        await contract.methods.KycBlock().send({ from: accounts[0] });
+
+        const addres = await contract.methods.lastContractAddress().call({ from: accounts[0] });
+
+        setAdd(addres);
 
         if (les){
             document.getElementById("msg").style.display = "block";
@@ -91,14 +98,14 @@ function Mykyc() {
                 
                 <form>
                     <div>
-                    <div className="form__heading" value={fullname} onchange={e => setFullname(e.target.value)}>Full Name</div>
-                    <input placeholder="Enter name" style={{ width: "100%", height: "25px" }} />
+                    <div className="form__heading" >Full Name</div>
+                    <input placeholder="Enter name" value={fullname} onChange={e => setFullname(e.target.value)} style={{ width: "100%", height: "25px" }} />
                     </div>
 
                     <div style={{ display: "flex", marginTop: "20px" }}>
                         <div style={{ flex: "1", marginRight: "20px" }}>
-                        <div className="form__heading" value={fathername} onchange={e => setFathername(e.target.value)}>Father Name</div>
-                        <input placeholder="Enter fathers name" style={{ width: "100%", height: "25px" }} />
+                        <div className="form__heading">Father Name</div>
+                        <input placeholder="Enter fathers name" value={fathername} onChange={e => setFathername(e.target.value)} style={{ width: "100%", height: "25px" }} />
                         </div>
 
                         <div style={{ flex: "1"}}>
@@ -144,8 +151,8 @@ function Mykyc() {
                 <form>
                     <div style={{ display: "flex", marginTop: "20px" }}>
                         <div style={{ flex: "1", marginRight: "20px" }}>
-                        <div className="form__heading" value={dob} onchange={e => setDob(e.target.value)}>Date of birth</div>
-                        <input placeholder="Enter date" style={{ width: "100%", height: "25px" }} />
+                        <div className="form__heading">Date of birth</div>
+                        <input placeholder="Enter date" value={dob} onChange={e => setDob(e.target.value)} style={{ width: "100%", height: "25px" }} />
                         </div>
 
                         <div style={{ flex: "1", marginRight: "20px"}}>
@@ -154,8 +161,8 @@ function Mykyc() {
                         </div>
 
                         <div style={{ flex: "1"}}>
-                        <div className="form__heading" value={gender} onchange={e => setGender(e.target.value)}>Gender</div>
-                        <input placeholder="Select gender" style={{ width: "100%", height: "25px" }} />
+                        <div className="form__heading">Gender</div>
+                        <input placeholder="Select gender" value={gender} onChange={e => setGender(e.target.value)} style={{ width: "100%", height: "25px" }} />
                         </div>
                     </div>
                 </form>
@@ -220,7 +227,7 @@ function Mykyc() {
                         </div>
                     </div>
 
-                    <div className="message" id="msg" hidden="hidden">Congratulation your KYC has been put in the Blockchain</div>
+                    <div className="message" id="msg" hidden="hidden">Congratulation your KYC has been put in the Blockchain and its address is {add}</div>
 
                     <div className="kycbutton">
                         <button className="kyc__submitbtn" onClick={submitKyc}>Submit</button>
