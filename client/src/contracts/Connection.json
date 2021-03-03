@@ -22,25 +22,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_reqaddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_bankname\",\"type\":\"string\"}],\"name\":\"reqKyc\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/binay/react-dapp/contracts/Connection.sol\":\"Connection\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/binay/react-dapp/contracts/Connection.sol\":{\"keccak256\":\"0xaf5fad066c22b28ebcaa61d61d65dc2f0c18e9b494350e5ba5572d6e373c0504\",\"urls\":[\"bzz-raw://72c35441a4b263ed5ee63d34611283c6084c9474d4fb8dc6b320d0c8600ea751\",\"dweb:/ipfs/Qmbp46ZteyQBr1HFNeweSEvFktRi1xNH6SXz2Le1AR9Mfg\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_reqaddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_bankname\",\"type\":\"string\"}],\"name\":\"reqKyc\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/elnino/Desktop/ReactBlockchain__dapp/contracts/Connection.sol\":\"Connection\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/elnino/Desktop/ReactBlockchain__dapp/contracts/Connection.sol\":{\"keccak256\":\"0xaf5fad066c22b28ebcaa61d61d65dc2f0c18e9b494350e5ba5572d6e373c0504\",\"urls\":[\"bzz-raw://72c35441a4b263ed5ee63d34611283c6084c9474d4fb8dc6b320d0c8600ea751\",\"dweb:/ipfs/Qmbp46ZteyQBr1HFNeweSEvFktRi1xNH6SXz2Le1AR9Mfg\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.16;\n\ninterface Connection {\n    function reqKyc(address _reqaddress, string calldata _bankname) external;\n}",
-  "sourcePath": "/home/binay/react-dapp/contracts/Connection.sol",
+  "sourcePath": "/home/elnino/Desktop/ReactBlockchain__dapp/contracts/Connection.sol",
   "ast": {
-    "absolutePath": "/home/binay/react-dapp/contracts/Connection.sol",
+    "absolutePath": "/home/elnino/Desktop/ReactBlockchain__dapp/contracts/Connection.sol",
     "exportedSymbols": {
       "Connection": [
-        229
+        376
       ]
     },
-    "id": 230,
+    "id": 377,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 221,
+        "id": 368,
         "literals": [
           "solidity",
           "^",
@@ -56,9 +56,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 229,
+        "id": 376,
         "linearizedBaseContracts": [
-          229
+          376
         ],
         "name": "Connection",
         "nodeType": "ContractDefinition",
@@ -66,22 +66,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 228,
+            "id": 375,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "reqKyc",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 226,
+              "id": 373,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 223,
+                  "id": 370,
                   "name": "_reqaddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 228,
+                  "scope": 375,
                   "src": "69:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -90,7 +90,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 222,
+                    "id": 369,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "69:7:1",
@@ -105,10 +105,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 225,
+                  "id": 372,
                   "name": "_bankname",
                   "nodeType": "VariableDeclaration",
-                  "scope": 228,
+                  "scope": 375,
                   "src": "90:25:1",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -117,7 +117,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 224,
+                    "id": 371,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "90:6:1",
@@ -133,144 +133,166 @@
               "src": "68:48:1"
             },
             "returnParameters": {
-              "id": 227,
+              "id": 374,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "125:0:1"
             },
-            "scope": 229,
+            "scope": 376,
             "src": "53:73:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 230,
+        "scope": 377,
         "src": "26:102:1"
       }
     ],
     "src": "0:128:1"
   },
   "legacyAST": {
-    "absolutePath": "/home/binay/react-dapp/contracts/Connection.sol",
-    "exportedSymbols": {
-      "Connection": [
-        229
-      ]
+    "attributes": {
+      "absolutePath": "/home/elnino/Desktop/ReactBlockchain__dapp/contracts/Connection.sol",
+      "exportedSymbols": {
+        "Connection": [
+          376
+        ]
+      }
     },
-    "id": 230,
-    "nodeType": "SourceUnit",
-    "nodes": [
+    "children": [
       {
-        "id": 221,
-        "literals": [
-          "solidity",
-          "^",
-          "0.5",
-          ".16"
-        ],
-        "nodeType": "PragmaDirective",
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".16"
+          ]
+        },
+        "id": 368,
+        "name": "PragmaDirective",
         "src": "0:24:1"
       },
       {
-        "baseContracts": [],
-        "contractDependencies": [],
-        "contractKind": "interface",
-        "documentation": null,
-        "fullyImplemented": false,
-        "id": 229,
-        "linearizedBaseContracts": [
-          229
-        ],
-        "name": "Connection",
-        "nodeType": "ContractDefinition",
-        "nodes": [
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            376
+          ],
+          "name": "Connection",
+          "scope": 377
+        },
+        "children": [
           {
-            "body": null,
-            "documentation": null,
-            "id": 228,
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "reqKyc",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 226,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 223,
-                  "name": "_reqaddress",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 228,
-                  "src": "69:19:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 222,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "69:7:1",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 225,
-                  "name": "_bankname",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 228,
-                  "src": "90:25:1",
-                  "stateVariable": false,
-                  "storageLocation": "calldata",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_calldata_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 224,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "90:6:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
               ],
-              "src": "68:48:1"
+              "name": "reqKyc",
+              "scope": 376,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
             },
-            "returnParameters": {
-              "id": 227,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "125:0:1"
-            },
-            "scope": 229,
-            "src": "53:73:1",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "external"
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_reqaddress",
+                      "scope": 375,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 369,
+                        "name": "ElementaryTypeName",
+                        "src": "69:7:1"
+                      }
+                    ],
+                    "id": 370,
+                    "name": "VariableDeclaration",
+                    "src": "69:19:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_bankname",
+                      "scope": 375,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 371,
+                        "name": "ElementaryTypeName",
+                        "src": "90:6:1"
+                      }
+                    ],
+                    "id": 372,
+                    "name": "VariableDeclaration",
+                    "src": "90:25:1"
+                  }
+                ],
+                "id": 373,
+                "name": "ParameterList",
+                "src": "68:48:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 374,
+                "name": "ParameterList",
+                "src": "125:0:1"
+              }
+            ],
+            "id": 375,
+            "name": "FunctionDefinition",
+            "src": "53:73:1"
           }
         ],
-        "scope": 230,
+        "id": 376,
+        "name": "ContractDefinition",
         "src": "26:102:1"
       }
     ],
+    "id": 377,
+    "name": "SourceUnit",
     "src": "0:128:1"
   },
   "compiler": {
@@ -278,8 +300,8 @@
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.2.0",
-  "updatedAt": "2020-11-24T07:12:06.477Z",
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-02-24T08:11:19.559Z",
   "devdoc": {
     "methods": {}
   },

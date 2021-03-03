@@ -1,0 +1,11 @@
+.sidebarRow{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.sidebarRow :hover {
+    background-color: #f8df2d6b;
+    border-radius: 10px;
+}

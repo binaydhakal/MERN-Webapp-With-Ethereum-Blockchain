@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "file-system": "^2.2.2",
+    "ipfs-api": "^19.0.0",
+    "ipfs-http-client": "^49.0.2",
+    "js-cookie": "^2.2.1",
+    "proxy": "^1.0.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",
-    "react-scripts": "3.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "validator": "^13.5.2",
     "web3": "1.2.2"
   },
   "scripts": {
@@ -28,5 +38,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://127.0.0.1:5000"
 }
