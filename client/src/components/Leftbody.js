@@ -42,7 +42,7 @@ function Leftbody() {
                 <Link className="text-decoration-none" >
                     <div className="leftbody__full">
                         <div><FcServices className="leftbody__image" />
-                        Services </div>
+                        My Details</div>
                     </div>        
                 </Link>
 
@@ -50,7 +50,7 @@ function Leftbody() {
                     <div className="leftbody__full">
                         <div>
                         <VscAccount className="leftbody__image" style={{color: "lightgreen"}} />
-                        Account</div>        
+                        KYC Request</div>        
                     </div>
                 </Link>
 

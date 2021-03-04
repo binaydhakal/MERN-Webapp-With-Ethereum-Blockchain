@@ -132,7 +132,7 @@ const Signin = () => {
         <div className="col-md-5 mx-auto align-self-center">
           <div className="text-center">
             <h1>AGB - BANK</h1>
-            <p>New era and new technology of money transfer.</p>
+            <p>New Technology And New Era Of Data Flow. Be Safe Of Your Data.</p>
             {errorMsg && showErrorMsg(errorMsg)}
             {loading && showLoading()}
           </div>

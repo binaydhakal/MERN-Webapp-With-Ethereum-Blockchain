@@ -2,6 +2,22 @@
     margin: 0;
 }
 
+/* .navbar {
+    background-color: #000  !important;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+.navbar .navbar-brand:hover{
+    color: #fff;
+}
+
+.navbar .navbar-nav .navbar-item .navbar-link {
+    color: #fff !important;
+} */
+
 .navbar {
     background-color: #f8df2d6b  !important;
 }

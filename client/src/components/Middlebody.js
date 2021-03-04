@@ -17,15 +17,15 @@ function Middlebody() {
                 </div>
                 </Link>
 
-                <Link>
+                <Link to="/user/mykyc">
                 <div className="firstpart__link">
                     <FaCoins className="firstpart__icon" style={{ color: "rgb(223, 124, 124)"}} />
-                    <span>Bank Transfer</span>
+                    <span>KYC Validation</span>
                     </div>
                 </Link>
 
                 
-                <Link>
+                <Link to="/mykycreq">
                 <div className="firstpart__link">
                     <FcViewDetails className="firstpart__icon" />
                     <span>KYC Request</span>

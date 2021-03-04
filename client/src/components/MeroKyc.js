@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { createKycAddress, getKyc, getKycAddress } from '../api/kyc';
 import { getLocalStorage, setLocalStorage } from '../helpers/localStorage';
-import ipfs from "./ipfs"
 import BlockchainContext from './BlockchainContext';
 import { showErrorMsg, showSuccessMsg } from '../helpers/message';
 
@@ -100,54 +99,86 @@ const MeroKyc = () => {
     const [ captureFile, setCaptureFile ] = useState(null);
 
 
+    const submitToBlockchain = async (e) => {
 
-        // const buf = Buffer(fs.readFile(pp[0].path));
-        // ipfs.files.add(buf, (error,result) => {
-        //     if(error){
-        //         console.log(error);
-        //     }else{
-        //         setPicturehash({
-        //             ...picturehash,
-        //             profilePicture: result[0].hash,
-        //         });
-        //         console.log('profile', picturehash.profilePicture);
-        //     }
-        // });
+
+
+        //     const responseImage = await fetch(`http://localhost:6000/uploads/${pp}`);
+        //     const imageBuffer = await (await responseImage.blob()).arrayBuffer(8);
+    
+        //     ipfs.files.add(Buffer.from(imageBuffer), (error,result) => {
+        //         if(error){
+        //             console.log('error from the ipfs server', error);
+        //         }else{
+        //             setPicturehash({
+        //                 ...picturehash,
+        //                 profilePicture: result[0].hash,
+        //             });
+        //             console.log('profile', picturehash.profilePicture);
+        //             console.log(`https://ipfs.infura.io/ipfs/${picturehash.profilePicture}`)
+        //         }
+        //     });
+            
+        // } catch (error) {
+        //     console.log(error);
+        // }
+
+
  
 
 
 
-    //  <img src={`https://ipfs.io/ipfs/${picturehash.profilePicture}`} alt=""  style={{ width: "100%", height: "100px" }} ></img>
-    //  ipfs.add(Buffer(front), (error,result) => {
-    //     if(error){
-    //         console.log(error);
-    //     }else{
-    //         setPicturehash({
-    //             ...picturehash,
-    //             identityFront: result,
-    //         });
-    //         console.log('front', picturehash.identityFront);
-    //     }
-    // });
-    // ipfs.add(Buffer(back), (error,result) => {
-    //     if(error){
-    //         console.log(error);
-    //     }else{
-    //         setPicturehash({
-    //             ...picturehash,
-    //             identityBack: result,
-    //         });
-    //         console.log('back', picturehash.identityBack);
-    //     }
-    // });
-    const submitToBlockchain = async (e) => {
+    
+        // //  <img src={`https://ipfs.infura.io/ipfs/${picturehash.profilePicture}`} alt=""  style={{ width: "100%", height: "100px" }} ></img>
+    
+
+        // try {
+        //     const responseImage1 = await fetch(`http://localhost:6000/uploads/${front}`);
+        //     const imageBuffer1 = await (await responseImage1.blob()).arrayBuffer(8);
+    
+        //     console.log(imageBuffer1);
+    
+        //     ipfs.files.add(Buffer.from(imageBuffer1), (error,result) => {
+        //         if(error){
+        //             console.log('error from the ipfs server', error);
+        //         }else{
+        //             setPicturehash({
+        //                 ...picturehash,
+        //                 identityFront: result[0].hash,
+        //             });
+        //             console.log('front', picturehash.identityFront);
+        //             console.log(`https://ipfs.infura.io/ipfs/${picturehash.identityFront}`)
+        //         }
+        //     });
+            
+        // } catch (error) {
+        //     console.log(error);
+        // }
 
 
-    e.preventDefault();
+        // try {
+        //     const responseImage2 = await fetch(`http://localhost:6000/uploads/${back}`);
+        //     const imageBuffer2 = await (await responseImage2.blob()).arrayBuffer(8);
+        //     console.log(imageBuffer2);
+        //     ipfs.files.add(Buffer.from(imageBuffer2), (error,result) => {
+        //         if(error){
+        //             console.log(error);
+        //         }else{
+        //             setPicturehash({
+        //                 ...picturehash,
+        //                 identityBack: result[0].hash,
+        //             });
+        //             console.log('back', picturehash.identityBack);
+        //             console.log(`https://ipfs.infura.io/ipfs/${picturehash.identityBack}`)
+        //         }
+        //     });
+        // } catch (error) {
+        //     console.log(error);
+        // }
 
 
     if (getLocalStorage('kycAddress')) {
-      setErrorMsg(`Fool You Have Already Submitted Your KYC to Blockchain.
+      setErrorMsg(`You Have Already Submitted Your KYC to Blockchain.
       And Your KYC Address is ${getLocalStorage('kycAddress')} `);
     }else{
     
@@ -176,20 +207,17 @@ const MeroKyc = () => {
           idatetype.toString(),
         ];
      const picture = [
-            // picturehash.profileapicture.toString(),
-            // picturehash.identityFront.toString(),
-            // picturehash.identityBack.toString(),
-            // kycData.isvalid.toString(),
             pp.toString(),
             front.toString(),
             back.toString(),
-            isvalid.toString()
+            isvalid.toString(),
+   
         ]
-    console.log(familyinfo);
-    console.log(personaladd);
-    console.log(personalinfo);
-    console.log(iinfo);
-
+            console.log(familyinfo);
+            console.log(personaladd);
+            console.log(personalinfo);
+            console.log(iinfo);
+            console.log(picture);
 
     try {
 
@@ -222,7 +250,7 @@ const MeroKyc = () => {
       })
 
 
-   };//
+   };
 
 
     return (
@@ -233,7 +261,7 @@ const MeroKyc = () => {
              <div className="middletitle"> Your KYC </div>
 
                 <div className="form__title">Family Information</div>
-
+          
                 <form>
                 <div>
                     <div className="form__heading">Full Name: {fullname}</div>
@@ -320,12 +348,12 @@ const MeroKyc = () => {
                     </div>
                 </div>
                 </form>
-{/* 
+
      <div style={{ display: "flex", marginTop: "20px" }}>
             <div style={{ flex: "1", marginRight: "20px" }}>
               <div className="form__heading">Photo(PP)</div>
               <img
-                src={`/uploads/${pp}`}
+                src={`https://ipfs.infura.io/ipfs/${pp}`}
                 id="img1"
                 alt=""
                 style={{ width: "100%", height: "100px" }}
@@ -335,7 +363,7 @@ const MeroKyc = () => {
             <div style={{ flex: "1", marginRight: "20px" }}>
               <div className="form__heading">Identity(front)</div>
               <img
-                src={`/uploads/${front}`}
+                src={`https://ipfs.infura.io/ipfs/${front}`}
                 id="img2"
                 alt=""
                 style={{  width: "100%", height: "100px" }}
@@ -345,13 +373,13 @@ const MeroKyc = () => {
             <div style={{ flex: "1" }}>
               <div className="form__heading">Identity(back)</div>
               <img
-                src={`/uploads/${back}`}
+                src={`https://ipfs.infura.io/ipfs/${back}`}
                 id="img3"
                 alt=""
                 style={{ width: "100%", height: "100px" }}
               />
             </div>
-          </div> */}
+          </div>
 
             <div>Validated: {isvalid === 0 && (
                 <i className="fa fa-times" aria-hidden="true" style={{color: "red"}}></i>

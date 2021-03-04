@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Bank1 from "../contracts/Bank1.json";
 import getWeb3 from "../getWeb3";
+import io from "socket.io-client";
 import "./App.css";
 import BlockchainContext from "./BlockchainContext.js";
 import Login from "./Login.js";
@@ -18,12 +19,14 @@ import AdminRoute from "./AdminRoute";
 import UserRoute from "./UserRoute";
 import SubmitKyc from "./SubmitKyc";
 import MyKyc from "./MyKyc";
+import URLs from "./URLs";
 
 
 function App() {
   const [web3, setWeb3] = useState(undefined);
   const [accounts, setAccounts] = useState([]);
   const [contract, setContract] = useState([]);
+  const [isvalid, setIsValid ] = useState('');
 
   useEffect(() => {
 
@@ -62,6 +65,20 @@ function App() {
     init();
 
   }, []);
+
+
+  // useEffect( async () => {
+  //   const socket = new WebSocket("ws://localhost:5001");
+
+  //   socket.onopen(() => {
+  //     socket.send("Hello!");
+  //   });
+    
+  //   socket.onmessage(data => {
+  //     console.log(data);
+  //   });
+    
+  // },[])
 
   if(typeof web3 === undefined){
     return <div>Loading Web3, accounts, and contract...</div>;

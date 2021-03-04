@@ -71,15 +71,15 @@ const KycSchema = new mongoose.Schema({
         required: true,
       },
       pp: {
-        type: Array,
+        type: String,
         required: true,
       },
       front: {
-        type: Array,
+        type: String,
         required: true,
       },
       back: {
-        type: Array,
+        type: String,
         required: true,
       },
       isvalid: {

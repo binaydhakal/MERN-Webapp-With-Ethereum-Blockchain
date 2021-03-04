@@ -7,6 +7,7 @@
     "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
     "file-system": "^2.2.2",
+    "fs": "^0.0.1-security",
     "ipfs-api": "^19.0.0",
     "ipfs-http-client": "^49.0.2",
     "js-cookie": "^2.2.1",
@@ -15,6 +16,7 @@
     "react-dom": "16.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
+    "socket.io-client": "^3.1.2",
     "validator": "^13.5.2",
     "web3": "1.2.2"
   },
@@ -39,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://127.0.0.1:5000"
+  "proxy": "http://127.0.0.1:6000"
 }

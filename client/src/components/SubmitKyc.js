@@ -10,6 +10,7 @@ import BlockchainContext from "./BlockchainContext";
 import { showErrorMsg, showSuccessMsg } from "../helpers/message";
 import { createKyc } from "../api/kyc";
 import { setLocalStorage } from "../helpers/localStorage";
+import { showLoading } from "../helpers/loading";
 
 function SubmitKyc() {
   const { accounts, contract } = useContext(BlockchainContext);
@@ -125,6 +126,8 @@ function SubmitKyc() {
         setErrorMsg('All fields are compulsory except spouce name');
       } else {
 
+        setLoading(true);
+
         let formData = new FormData();
         formData.append('fullname', fullname);
         formData.append('fathername', fathername);
@@ -169,6 +172,7 @@ function SubmitKyc() {
               front: null,
               back: null,
             });
+            setLoading(false);
             setPhoto1(null);
             setPhoto2(null);
             setPhoto3(null);
@@ -182,6 +186,7 @@ function SubmitKyc() {
 
           })
           .catch((err) => {
+            setLoading(false);
             setErrorMsg(err.response.data.errorMessage);
           });
 
@@ -192,56 +197,6 @@ function SubmitKyc() {
 
 
   }
-
-  // const submitKyc = async (e) => {
-  //   e.preventDefault();
-  //   const familyinfo = [
-  //     kycData.fullname.toString(),
-  //     kycData.fathername.toString(),
-  //     kycData.mothername.toString(),
-  //     kycData.grandfathername.toString(),
-  //     kycData.spousename.toString(),
-  //   ];
-  //   const personaladd = [
-  //     kycData.district.toString(),
-  //     kycData.vdc.toString(),
-  //     kycData.ward.toString(),
-  //   ];
-  //   const personalinfo = [
-  //     kycData.dob.toString(),
-  //     kycData.datype.toString(),
-  //     kycData.gender.toString(),
-  //   ];
-  //   const iinfo = [
-  //     kycData.itype.toString(),
-  //     kycData.inumber.toString(),
-  //     kycData.ifrom.toString(),
-  //     kycData.idate.toString(),
-  //     kycData.idatetype.toString(),
-  //   ];
-  //   console.log(familyinfo);
-  //   console.log(personaladd);
-  //   console.log(personalinfo);
-  //   console.log(iinfo);
-  //   await contract.methods
-  //     .buildKyc(familyinfo, personaladd, personalinfo, iinfo)
-  //     .send({ from: accounts[0] });
-
-  //   await contract.methods.KycBlock().send({ from: accounts[0] });
-
-  //   const addres = await contract.methods
-  //     .lastContractAddress()
-  //     .call({ from: accounts[0] });
-
-  //   setAdd(addres);
-
-  //   if (addres) {
-  //     document.getElementById("msg").style.display = "block";
-  //     console.log(`${add}`);
-  //   } else {
-  //     alert("Sorry Transaction Failed");
-  //   }
-  // };
 
   return (
     <div className="home">
@@ -255,6 +210,7 @@ function SubmitKyc() {
 
         {successMsg && showSuccessMsg(successMsg)}
             {errorMsg && showErrorMsg(errorMsg)}
+            {loading && showLoading()}
           <div className="middletitle">Fill Up Your KYC </div>
 
           <div className="form__title">Family Information</div>
@@ -364,7 +320,7 @@ function SubmitKyc() {
               <div style={{ flex: "1", marginRight: "20px" }}>
                 <div className="form__heading">Date of birth</div>
                 <input
-                  placeholder="Enter date"
+                  placeholder="YYYY-MM-DD"
                   name="dob"
                   value={dob}
                   onChange={handleKycChange}
@@ -374,24 +330,48 @@ function SubmitKyc() {
 
               <div style={{ flex: "1", marginRight: "20px" }}>
                 <div className="form__heading">Date type</div>
-                <input
+                {/* <input
                   placeholder="Select date type"
                   name="datype"
                   value={datype}
                   onChange={handleKycChange}
                   style={{ width: "100%", height: "25px" }}
-                />
+                /> */}
+                    <select
+                        placeholder="Select Date Type"
+                        name="datype"
+                        value={datype}
+                        onChange={handleKycChange}
+                        style={{ width: "100%", height: "25px" }}
+                >
+                  <option>Select Date Type</option>
+                  <option>BS</option>
+                  <option>AD</option>
+                </select>
+                
               </div>
 
               <div style={{ flex: "1" }}>
                 <div className="form__heading">Gender</div>
-                <input
+                {/* <input
                   placeholder="Select gender"
                   name="gender"
                   value={gender}
                   onChange={handleKycChange}
                   style={{ width: "100%", height: "25px" }}
-                />
+                /> */}
+                <select
+                    placeholder="Select gender"
+                    name="gender"
+                    value={gender}
+                    onChange={handleKycChange}
+                    style={{ width: "100%", height: "25px" }}
+                >
+                  <option>Select Your Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Others</option>
+                </select>
               </div>
             </div>
           </form>
@@ -401,13 +381,25 @@ function SubmitKyc() {
             <div style={{ display: "flex", marginTop: "20px" }}>
               <div style={{ flex: "1", marginRight: "20px" }}>
                 <div className="form__heading">Identity type</div>
-                <input
+                {/* <input
                   placeholder="Enter identity type"
                   name="itype"
                   value={itype}
                   onChange={handleKycChange}
                   style={{ width: "100%", height: "25px" }}
-                />
+                /> */}
+                <select
+                    placeholder="Enter identity type"
+                    name="itype"
+                    value={itype}
+                    onChange={handleKycChange}
+                    style={{ width: "100%", height: "25px" }}
+                >
+                  <option>Select Identity </option>
+                  <option>Citizenship</option>
+                  <option>Passport</option>
+                </select>
+
               </div>
 
               <div style={{ flex: "1", marginRight: "20px" }}>
@@ -446,13 +438,26 @@ function SubmitKyc() {
 
               <div style={{ flex: "1", marginRight: "20px" }}>
                 <div className="form__heading">Issued date type</div>
-                <input
+                {/* <input
                   placeholder="Enter issued date type"
                   name="idatetype"
                   value={idatetype}
                   onChange={handleKycChange}
                   style={{ width: "100%", height: "25px" }}
-                />
+                /> */}
+
+                  <select
+                     placeholder="Enter issued date type"
+                     name="idatetype"
+                     value={idatetype}
+                     onChange={handleKycChange}
+                     style={{ width: "100%", height: "25px" }}      
+                >
+                  <option>Select Date Type</option>
+                  <option>BS</option>
+                  <option>AD</option>
+                </select>
+                
               </div>
             </div>
           </form>

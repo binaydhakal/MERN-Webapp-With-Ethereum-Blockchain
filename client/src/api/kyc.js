@@ -14,6 +14,23 @@ export const createKyc = async (data) => {
 
 }
 
+
+export const createKycFromRequest = async (data) => {
+
+  const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  
+    console.log("from kycfrom request api")
+
+  const response = await axios.post('/api/requestkyc', data, config);
+  return response;
+
+}
+
+
 export const getKyc = async () => {
 
 
